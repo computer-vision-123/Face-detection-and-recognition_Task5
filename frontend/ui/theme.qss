@@ -1,0 +1,227 @@
+/*
+ * theme.qss  --  FaceScope
+ * Pure blue palette: deep navy header, sky-blue accents, clean whites.
+ * No purple, no indigo, no grey-blues. Only true blues.
+ */
+
+/* == Global ================================================================ */
+QWidget {
+    background-color: #EEF5FB;
+    color: #0D2137;
+    font-family: "Segoe UI", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+}
+
+QMainWindow { background-color: #EEF5FB; }
+
+/* == Tab widget ============================================================= */
+QTabWidget::pane { border: none; background: #EEF5FB; }
+QTabWidget::tab-bar { alignment: left; }
+
+QTabBar {
+    background: transparent;
+    qproperty-drawBase: 0;
+}
+
+QTabBar::tab {
+    background: transparent;
+    color: #6A90AA;
+    padding: 13px 30px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-right: 2px;
+    min-width: 130px;
+}
+
+QTabBar::tab:selected {
+    color: #0A7EC2;
+    border-bottom: 3px solid #0A7EC2;
+    font-weight: 700;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 rgba(10,126,194,0.08), stop:1 transparent);
+}
+
+QTabBar::tab:hover:!selected {
+    color: #2196F3;
+    border-bottom: 3px solid rgba(33,150,243,0.40);
+    background: rgba(33,150,243,0.05);
+}
+
+/* == Buttons -- default ==================================================== */
+QPushButton {
+    background-color: #FFFFFF;
+    color: #3A6080;
+    border: 1.5px solid #B8D9F0;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 32px;
+}
+QPushButton:hover { background-color: #DFF0FA; border-color: #5EB3E8; color: #005C99; }
+QPushButton:pressed { background-color: #C5E2F5; border-color: #0A7EC2; }
+QPushButton:disabled { background-color: #F0F7FC; color: #9ABCD0; border-color: #D0E8F5; }
+
+/* == Primary action ======================================================== */
+QPushButton[text="Detect Faces"],
+QPushButton[text="Run Recognition"],
+QPushButton[text="Load Eigenfaces"],
+QPushButton[text="Recognize"] {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1E9BDB, stop:1 #0A7EC2);
+    color: #FFFFFF;
+    border: none;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 8px;
+    padding: 9px 20px;
+    min-height: 34px;
+}
+QPushButton[text="Detect Faces"]:hover,
+QPushButton[text="Run Recognition"]:hover,
+QPushButton[text="Load Eigenfaces"]:hover,
+QPushButton[text="Recognize"]:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #45B3EA, stop:1 #1E9BDB);
+}
+QPushButton[text="Detect Faces"]:pressed,
+QPushButton[text="Run Recognition"]:pressed,
+QPushButton[text="Load Eigenfaces"]:pressed,
+QPushButton[text="Recognize"]:pressed { background: #005C99; }
+QPushButton[text="Detect Faces"]:disabled,
+QPushButton[text="Run Recognition"]:disabled,
+QPushButton[text="Recognize"]:disabled { background: #A8D5EF; color: #FFFFFF; border: none; }
+
+/* == Secondary ============================================================= */
+QPushButton[text="Add Image"],
+QPushButton[text="Load Image"],
+QPushButton[text="Load Probe"],
+QPushButton[text="Select Dataset"],
+QPushButton[text="Upload Dataset"],
+QPushButton[text="Load Model"],
+QPushButton[text="Save Result"] {
+    background-color: #FFFFFF;
+    color: #0A7EC2;
+    border: 1.5px solid #7DC4E8;
+    font-weight: 600;
+}
+QPushButton[text="Add Image"]:hover,
+QPushButton[text="Load Image"]:hover,
+QPushButton[text="Load Probe"]:hover,
+QPushButton[text="Select Dataset"]:hover,
+QPushButton[text="Upload Dataset"]:hover,
+QPushButton[text="Load Model"]:hover,
+QPushButton[text="Save Result"]:hover { background-color: #DFF0FA; border-color: #0A7EC2; }
+
+/* == ROC button ============================================================ */
+QPushButton[text="Show ROC"],
+QPushButton[text="View ROC Curve"],
+QPushButton[text="ROC Curve"] {
+    background-color: #FFFFFF;
+    color: #0A7EC2;
+    border: 1.5px solid #7DC4E8;
+    font-weight: 600;
+}
+QPushButton[text="Show ROC"]:hover,
+QPushButton[text="View ROC Curve"]:hover,
+QPushButton[text="ROC Curve"]:hover { background-color: #DFF0FA; border-color: #0A7EC2; }
+QPushButton[text="Show ROC"]:disabled,
+QPushButton[text="View ROC Curve"]:disabled,
+QPushButton[text="ROC Curve"]:disabled { background-color: #F0F7FC; color: #9ABCD0; border-color: #D0E8F5; }
+
+/* == Close ================================================================= */
+QPushButton[text="Close"] {
+    background-color: #FFFFFF; color: #3A6080; border: 1.5px solid #B8D9F0;
+}
+QPushButton[text="Close"]:hover { background-color: #DFF0FA; border-color: #5EB3E8; }
+
+/* == Group boxes ============================================================ */
+QGroupBox {
+    border: 1.5px solid #B8D9F0;
+    border-radius: 10px;
+    margin-top: 18px;
+    padding: 14px 14px 10px 14px;
+    background: #FFFFFF;
+    font-weight: 600;
+    color: #0D2137;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 12px;
+    top: -1px;
+    padding: 0 6px;
+    background: #FFFFFF;
+    font-size: 10px;
+    color: #0A7EC2;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* == Image labels ========================================================== */
+QLabel#canvasLabel {
+    background: #FFFFFF;
+    border: 1.5px solid #B8D9F0;
+    border-radius: 10px;
+    color: #7DC4E8;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* == Spin boxes ============================================================= */
+QSpinBox, QDoubleSpinBox {
+    background: #FFFFFF;
+    border: 1.5px solid #B8D9F0;
+    border-radius: 7px;
+    padding: 5px 8px;
+    min-width: 80px;
+    color: #0D2137;
+    selection-background-color: #0A7EC2;
+}
+QSpinBox:focus, QDoubleSpinBox:focus { border-color: #0A7EC2; background: #F5FBFF; }
+QSpinBox::up-button, QDoubleSpinBox::up-button,
+QSpinBox::down-button, QDoubleSpinBox::down-button { width: 18px; border: none; background: #DFF0FA; border-radius: 3px; }
+QSpinBox::up-button:hover, QDoubleSpinBox::up-button:hover,
+QSpinBox::down-button:hover, QDoubleSpinBox::down-button:hover { background: #C5E2F5; }
+
+/* == Progress bar =========================================================== */
+QProgressBar { border: none; border-radius: 4px; background: #C5E2F5; height: 5px; }
+QProgressBar::chunk {
+    border-radius: 4px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #45B3EA, stop:1 #0A7EC2);
+}
+
+/* == Scroll bars ============================================================ */
+QScrollArea { border: none; background: transparent; }
+QScrollBar:vertical { background: #DFF0FA; width: 6px; border-radius: 3px; }
+QScrollBar::handle:vertical { background: #7DC4E8; border-radius: 3px; min-height: 24px; }
+QScrollBar::handle:vertical:hover { background: #0A7EC2; }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
+QScrollBar:horizontal { background: #DFF0FA; height: 6px; border-radius: 3px; }
+QScrollBar::handle:horizontal { background: #7DC4E8; border-radius: 3px; min-width: 24px; }
+QScrollBar::handle:horizontal:hover { background: #0A7EC2; }
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { width: 0; }
+
+/* == Status bar ============================================================= */
+QStatusBar { background: #FFFFFF; border-top: 1px solid #B8D9F0; color: #6A90AA; font-size: 11px; padding-left: 6px; }
+
+/* == Dialog ================================================================= */
+QDialog { background: #EEF5FB; }
+
+/* == Labels ================================================================= */
+QLabel { background: transparent; }
+
+/* == Tooltips =============================================================== */
+QToolTip { background: #01324F; color: #D6EEFA; border: none; border-radius: 6px; padding: 5px 10px; font-size: 11px; }
+
+/* == Form labels ============================================================ */
+QFormLayout QLabel { color: #3A6080; font-size: 12px; font-weight: 500; }
+
+/* == Splitter =============================================================== */
+QSplitter::handle { background: #B8D9F0; }
+QSplitter::handle:horizontal { width: 1px; }
+QSplitter::handle:vertical { height: 1px; }
